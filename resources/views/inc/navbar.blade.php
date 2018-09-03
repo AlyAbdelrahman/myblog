@@ -50,12 +50,77 @@
                 </div>
             </nav>
         
+
+
+
+
+
+
+
 <!-- Header -->
 <header class="w3-display-container w3-content w3-center" style="max-width:1500px">
   <img class="w3-image" src="http://www.pigeontech.co.uk/images/background1.jpeg" alt="Me" width="1500" height="600">
   <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
-  <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">What's in Ur Mind ?! </h1>
-    <h5 class="w3-hide-large" style="white-space:nowrap">>What's in Ur Mind  ?! </h5>
+      <style>
+        .blinking-cursor {
+            font-weight: 90;
+            font-size: 50px;
+            color: whitesmoke;
+           
+            -webkit-animation: 1s blink step-end infinite;
+            -moz-animation: 1s blink step-end infinite;
+            -ms-animation: 1s blink step-end infinite;
+            -o-animation: 1s blink step-end infinite;
+            animation: 1s blink step-end infinite;
+          }
+          
+          @keyframes "blink" {
+            from, to {
+              color: transparent;
+            }
+            50% {
+              color: black;
+            }
+          }
+          
+          @-moz-keyframes blink {
+            from, to {
+              color: transparent;
+            }
+            50% {
+              color: black;
+            }
+          }
+          
+          @-webkit-keyframes "blink" {
+            from, to {
+              color: transparent;
+            }
+            50% {
+              color: black;
+            }
+          }
+          
+          @-ms-keyframes "blink" {
+            from, to {
+              color: transparent;
+            }
+            50% {
+              color: black;
+            }
+          }
+          
+          @-o-keyframes "blink" {
+            from, to {
+              color: transparent;
+            }
+            50% {
+              color: black;
+            }
+          }
+          </style>
+  <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">What's in Ur Mind .. </h1><span class="blinking-cursor">|</span>
+    <h5 class="w3-hide-large" style="white-space:nowrap">What's in Ur Mind  ..</h5>
 
   </div>
   
@@ -63,8 +128,8 @@
   <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
         <a href="/posts" class="w3-bar-item w3-button">Home</a>
         <a href="/categories" class="w3-bar-item w3-button">Categories</a>
-        <a href="/about" class="w3-bar-item w3-button">About</a>
-        <a href="/services" class="w3-bar-item w3-button">Services</a>
+        
+        <a href="/services" class="w3-bar-item w3-button">About</a>
         <a href="/posts/create" class="w3-bar-item w3-button">Create Post</a>
         
   </div>

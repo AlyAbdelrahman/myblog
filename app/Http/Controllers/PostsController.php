@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Post\PostResource;
+
+use App\Http\Resources\Post\PostCollection ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 use App\Post;
 use DB;
+use App\User;
 use App\Category;
 class PostsController extends Controller
 {
@@ -22,8 +27,12 @@ class PostsController extends Controller
     }
     public function index()
     {
-        $posts= Post::orderBy('id','desc')->paginate(10);
-      return view ('posts.index') ->with('posts',$posts) ;
+        return PostCollection::collection(Post::all());
+ //$users=User::all();
+
+        //$posts= Post::orderBy('id','desc')->paginate(10);
+      
+      return view ('posts.index') ->with('posts',$posts)->with('users',$users) ;
     }
 
     /**
@@ -36,6 +45,8 @@ class PostsController extends Controller
         $categories=Category::all();
         return view ('posts.create')->with('categories',$categories );
     }
+
+   
 
     /**
      * Store a newly created resource in storage.
@@ -86,10 +97,20 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post= Post::find($id); // post id
-        $mypost=$post->category->name;
+        return   new PostResource($post);
+      
+      
+      //EL ATNEN DOL HOMA ele sa7 
+      //  $post= Post::find($id); // post id
+      //  $mypost=$post->category->name;
+
+
+
+
+
+
        // $categories=Category::where('id',);
 
        // $cat=$categories->where()

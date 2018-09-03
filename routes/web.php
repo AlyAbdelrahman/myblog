@@ -15,11 +15,19 @@ Route::get('/', 'PagesController@home');
 Route::resource('users', 'UserController');
 
 Route::get('/services', 'PagesController@services');
-
+Route::get('/posts/showposts/{id}', 'PostsController@showposts');
 Route::get('/index','PagesController@index' );
+Route::get('/about','PagesController@about' );
 Route::get('/about','PagesController@about' );
 Route::resource('categories','CategoryController',['except'=>['create']]);
 Route::resource('posts','PostsController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facbook/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\RegisterController@handleProviderCallback');

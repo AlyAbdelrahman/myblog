@@ -59,7 +59,7 @@ class CategoryController extends Controller
     {
         
         $postss =Post::all();
-    $categories = Category::find($id);
+        $categories = Category::find($id);
         
         $posts= DB::table('posts')->where('category_id',$id)->get();
         

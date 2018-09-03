@@ -93,7 +93,7 @@ class UserController extends Controller
         $posts=Post::all();
 
         $post = DB::table('posts')->where('user_id',$id);
-$post->delete();
+        $post->delete();
         $user->delete();
 
 

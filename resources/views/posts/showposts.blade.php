@@ -4,7 +4,7 @@
 
 <h1>Posts</h1>
 
-@if(count($posts)>0)
+@if(count($posts)>=0)
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .dropbtn {
@@ -68,7 +68,8 @@
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
     
     @foreach($users as $user)
-  <a href="/posts/showposts/{{$user->id}}">{{$user->name}}</a>
+  <a href="{{$user->id}}">{{$user->name}}</a>
+
      @endforeach
   </div>
 </div>
@@ -106,9 +107,7 @@ function filterFunction() {
     <div class="col-md-8 col-sm-8">
         <h3 ><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
 
-<small>Written on {{$post->created_at}}                  <br>          by {{$post->user->name}}</small>
-
-        </div>
+    </div>
 
     </div>
 </div>
